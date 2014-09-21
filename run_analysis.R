@@ -30,7 +30,7 @@ trainLabels <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Datase
 trainSubject <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt",
                            col.names = "Subject")
 
-trainSet <- cbind(testSubject$Subject, testLabels$Label, test)
+trainSet <- cbind(trainSubject$Subject, trainLabels$Label, train)
 names(trainSet)[1:2] <- c("Subject", "Label")
 
 ## combine test and train data into one data frame
