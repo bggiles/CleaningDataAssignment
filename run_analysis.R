@@ -59,6 +59,6 @@ finalSet <- merge(fullSetReduce, activity, by.x = "Label", by.y = "Label", all =
 library(plyr)
 
 tidyDataSet<- ddply(finalSet, .(finalSet$Subject, finalSet$Activity), function(finalSet) colwise(mean) (finalSet[,3:68]))
-names(tidyDataSet)[1,2] <- c("Subject", "Activity")
+names(tidyDataSet)[1:2] <- c("Subject", "Activity")
 
 write.table (tidyDataSet, file = "./tidyDataSet.txt", row.names = FALSE)
